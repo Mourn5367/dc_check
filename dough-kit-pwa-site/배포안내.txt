@@ -1,0 +1,34 @@
+도우컨디셔너 진단 키트 · GitHub Pages 배포
+
+1. dough-kit-pwa-site.zip을 압축 해제합니다.
+2. 새 GitHub 저장소에 압축 내부의 파일과 dough-kit-icons 폴더를 모두 올립니다.
+   index.html이 저장소 최상위에 있어야 합니다. .nojekyll도 함께 올리세요.
+3. 저장소 Settings → Pages → Build and deployment에서
+   Source: Deploy from a branch / Branch: main / Folder: /(root) → Save.
+4. 배포 완료 후 https://사용자명.github.io/저장소명/ 으로 접속합니다.
+   저장소명이 포함된 하위 경로도 지원합니다. HTTPS 주소를 사용하세요.
+
+모바일 사용
+- Android Chrome: 앱 설치 버튼 또는 브라우저 메뉴 → 앱 설치/홈 화면에 추가.
+- iPhone/iPad Safari: 공유 → 홈 화면에 추가 → 추가.
+- 최초 접속 후 '오프라인 사용 준비 완료'가 표시되어야 인터넷 없이 재실행할 수 있습니다.
+- 실제 Android/iPhone에서 홈 화면 설치와 비행기 모드 실행을 마지막으로 확인하세요.
+- 입력값과 최근 30건의 진단 기록은 해당 기기의 브라우저 저장소에 보관됩니다.
+  브라우저 데이터 삭제 시 함께 삭제됩니다. 설치 앱과 일반 브라우저의 저장소는
+  기기/브라우저에 따라 다를 수 있습니다.
+
+수정 및 업데이트
+- 작업 원본: 도우컨디셔너_진단키트.html
+- 배포 시 변경 파일과 관련 PWA 파일을 배포 폴더에도 반영하세요.
+- HTML/JS/아이콘 등을 변경할 때 dough-kit-sw.js의 VERSION 값을 반드시 바꾸세요.
+- 배포 후 앱을 다시 열면 업데이트를 확인합니다. '새 버전 적용'을 누르면 새로고침합니다.
+- 진단 계산은 기존 파일의 근사 테이블과 판정 로직을 사용하며 서버/API가 필요 없습니다.
+
+기존 파일
+- 이 폴더 최상위 index.html은 다른 앱용이므로 변경하지 않았습니다.
+- 배포 전용 dough-kit-pwa-site 안의 index.html을 사용하세요.
+- 원본 HTML만 업로드하면 설치·오프라인 기능을 사용할 수 없습니다.
+
+공식 참고
+https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest/Reference/start_url

@@ -1,15 +1,15 @@
 // Change VERSION whenever any app asset changes.
-const VERSION = '2026-10-16-2';
+const VERSION = '2026-10-20-v2-2';
 // Scope-specific caches also keep separate deployments on one origin isolated.
 const PREFIX = 'dough-kit:' + self.registration.scope + ':';
 const CACHE = PREFIX + VERSION;
-const APP = new URL('./도우컨디셔너_진단키트.html', self.location).href;
-const ASSETS = [APP, './', './index.html', './dough-kit.webmanifest', './dough-kit-pwa.js',
+const APP = new URL('./도우컨디셔너_진단키트_v2.html', self.location).href;
+const ASSETS = [APP, './도우컨디셔너_진단키트.html', './', './index.html', './dough-kit.webmanifest', './dough-kit-pwa.js',
   './dough-kit-icons/icon-192.png', './dough-kit-icons/icon-512.png',
   './dough-kit-icons/maskable-512.png', './dough-kit-icons/apple-touch-icon.png'];
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS.map(path => new Request(new URL(path, self.location), {cache: 'reload'})))));
 });
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
